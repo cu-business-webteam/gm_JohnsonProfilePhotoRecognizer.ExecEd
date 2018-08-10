@@ -19,11 +19,12 @@
 			var regExp = element.RegexMask;
 			var sfIdCap = element.SfIdCaptureName;
 			var destination = element.Destination;
+			var opt = System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.Singleline;
 
-			return ( System.Text.RegularExpressions.Regex.IsMatch( fileNameWithoutExtension, regExp, System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.Singleline ) )
+			return ( System.Text.RegularExpressions.Regex.IsMatch( fileNameWithoutExtension, regExp, opt ) )
 				? System.IO.Path.Combine(
 					destination,
-					System.Text.RegularExpressions.Regex.Match( fileNameWithoutExtension, regExp ).Groups[ sfIdCap ].Value + System.IO.Path.GetExtension( fileName )
+					System.Text.RegularExpressions.Regex.Match( fileNameWithoutExtension, regExp, opt ).Groups[ sfIdCap ].Value + System.IO.Path.GetExtension( fileName )
 				)
 				: null
 			;

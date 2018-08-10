@@ -12,6 +12,7 @@ namespace Johnson.ProfilePhotoRecognizer.ExecEd.Configuration {
 
 
 		#region properties
+		[System.IO.IODescription( "The regular expression which identifies the file." )]
 		[System.Configuration.ConfigurationProperty( "regexMask", IsRequired = true, IsKey = false )]
 		public System.String RegexMask {
 			get {
@@ -21,6 +22,7 @@ namespace Johnson.ProfilePhotoRecognizer.ExecEd.Configuration {
 				this[ "regexMask" ] = value.TrimToNull();
 			}
 		}
+		[System.IO.IODescription( "The name of the capture group containing the SalesForce ID." )]
 		[System.Configuration.ConfigurationProperty( "sfIdCaptureName", IsRequired = true, IsKey = false )]
 		public System.String SfIdCaptureName {
 			get {
@@ -30,6 +32,7 @@ namespace Johnson.ProfilePhotoRecognizer.ExecEd.Configuration {
 				this[ "sfIdCaptureName" ] = value.TrimToNull();
 			}
 		}
+		[System.IO.IODescription( "The directory to where the file should be moved." )]
 		[System.Configuration.ConfigurationProperty( "destination", IsRequired = true, IsKey = false )]
 		public System.String Destination {
 			get {
