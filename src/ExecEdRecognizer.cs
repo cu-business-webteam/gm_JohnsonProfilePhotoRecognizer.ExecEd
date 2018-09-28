@@ -28,8 +28,6 @@
 				)
 				: null
 			;
-
-			throw new System.NotImplementedException();
 		}
 
 	}
